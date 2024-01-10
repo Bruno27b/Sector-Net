@@ -1,0 +1,14 @@
+node_modules
+*.log
+*.spec*.*
+*.rules
+firebase.*
+firestore.*
+.gitignore
+.vscode
+.firebase
+.firebaserc
+README.md
+.dockerignore
+Dockerfile
+docker-compose.yml

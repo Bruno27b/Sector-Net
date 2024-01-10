@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    environment:
+      - DEV_DB=localhost
+      - DB_PORT=8080
+      - CHOKIDAR_USEPOLLING=true # habilito --poll
+    ports:
+      - 4200:4200
+      - 8080:8080 # Comparto el 8080 para firestore en host
+    volumes:
+      - ./src:/app/src
+      - ./dist:/app/dist
+      - /app/node_modules
+    command: ng serve --host 0.0.0.0 --poll 2000 # Host: permite conectarse externamente Poll comprueba los archivos de volumes
